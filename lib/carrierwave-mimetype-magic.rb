@@ -8,9 +8,10 @@ module CarrierWave
       alias_method_chain :cache!, :mimetype_magic
 
       begin
-        require 'filemagic'
+        require 'mimemagic'
+        require 'mimemagic/overlay'
       rescue LoadError => e
-        e.message << ' (You may need to install the ruby-filemagic gem)'
+        e.message << ' (You may need to install the mimemagic gem)'
         raise e
       end
     end
@@ -28,7 +29,7 @@ module CarrierWave
 
       begin
         # Collect information about the real content type
-        real_content_type = ::FileMagic.new(::FileMagic::MAGIC_MIME).file(opened_file.path).split(';').first
+        real_content_type = MimeMagic.by_magic(opened_file).type
         valid_extensions  = Array(MIME::Types[real_content_type].try(:first).try(:extensions))
 
         # Set proper content type, and update filename if current name doesn't match reach content type

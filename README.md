@@ -1,4 +1,5 @@
 # CarrierWave::MimetypeMagic
+[![Gem Version](https://badge.fury.io/rb/carrierwave-mimetype-magic.svg)](https://badge.fury.io/rb/carrierwave-mimetype-magic)
 
 By default, carrierwave uses the uploaded file's extension to guess the content type.  Sometimes you'd prefer to actually look at the file and set the content type based on that, so users can't upload php files as *i\_am\_lying.jpg* and have the server try to process them as images.
 
@@ -30,7 +31,7 @@ And now uploaded files' content\_type will be set appropriately, and uploads wil
 
 ## History
 
-Originally based on the [carrierwave-mymetype-fu](https://github.com/deviantech/carrierwave-mimetype-fu) (that based on [carrierwave-magic](https://github.com/glebtv/carrierwave-magic)) gem, but using [ruby-filemagic](https://github.com/blackwinter/ruby-filemagic) rather than MimetypeFu, that works incorrect with MS files.
+Originally based on the [carrierwave-mymetype-fu](https://github.com/deviantech/carrierwave-mimetype-fu) (that based on [carrierwave-magic](https://github.com/glebtv/carrierwave-magic)) gem, but using [mimemagic](https://github.com/minad/mimemagic) rather than MimetypeFu, that works incorrect with MS files.
 
 ## Contributing
 
