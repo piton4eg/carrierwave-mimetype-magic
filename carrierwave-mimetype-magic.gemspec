@@ -18,7 +18,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_runtime_dependency "mimemagic", '~> 0.3.0'
-  gem.add_runtime_dependency "carrierwave", '~> 0.10.0'
+  gem.add_runtime_dependency "carrierwave", '>= 0.10.0'
 
   gem.license       = 'MIT'
 end
